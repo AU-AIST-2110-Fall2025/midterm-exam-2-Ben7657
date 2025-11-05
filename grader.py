@@ -13,8 +13,17 @@ def extract_data(raw_data):
     """
     s_names = []
     s_grades = []
+    
+    
+    for student in raw_data:
+        student = student.split(":")
+        s_names = student.pop(1)
+        s_grades = int(student.pop(1))
+        s_names = s_names.title()
+        
+    #works fine when i print just code but test says things are missing
+        
 
-    # ADD YOUR CODE HERE
 
     return s_names, s_grades
 
@@ -25,20 +34,25 @@ def curve_grades(grades, by_amount):
     Use a ``while`` loop for iteration to earn full credit (a ``for`` loop works but loses style credit).
     Return the list containing the curved grades (same list if modified, otherwise new).
     """
-    # ADD YOUR CODE HERE
-
+    #got stuck 
+    while  
+    return grades
+        
 
 def print_top_performers(names, grades):
     """
     Print one 'Name: Score' line for each record whose grade is >= 95.
 
     Iterate the names and grades in index order and, for every grade >= 95, print:
-        print(f"{<name>}: {<grade>}")
         replace <name> and <grade> with the correct variable information.
     Output one line per qualifying record, no extra spaces or blank lines.
     Returns: None
     """
-    # ADD YOUR CODE HERE
+    i = 0
+    for gr in grades:
+        if gr >= 95:
+            print(f'{names[i]}: {grades[i]}')
+        i += 1
 
 
 def main():
@@ -66,17 +80,24 @@ def main():
 
     # If you were unable to correctly extract the names and grades from roster_records,
     # uncomment the lists below so you can use the formatted data in the next function
-    # names = ["Ana Lopez", "Priya Singh", "Max Jones", "Li Chen", "Zoe Brown", "Nico Garcia", "Minh Nguyen", "Carla Perez", "Noel Davis", "Hana Kim", "Ravi Patel", "Jade Morgan", "Eli Smith", "Aria Reed", "Theo Allen"]
+    #names = ["Ana Lopez", "Priya Singh", "Max Jones", "Li Chen", "Zoe Brown", "Nico Garcia", "Minh Nguyen", "Carla Perez", "Noel Davis", "Hana Kim", "Ravi Patel", "Jade Morgan", "Eli Smith", "Aria Reed", "Theo Allen"]
     # grades = [78, 97, 85, 88, 73, 81, 90, 84, 76, 96, 69, 87, 82, 91, 77]
 
     updated_grades = curve_grades(grades, 5)
     
     # If you were unable to correctly curve the grades,
     # uncomment the list below so you can use the curved grades in the next function
-    # updated_grades = [83, 100, 90, 93, 78, 86, 95, 89, 81, 100, 74, 92, 87, 96, 82]
+    updated_grades = [83, 100, 90, 93, 78, 86, 95, 89, 81, 100, 74, 92, 87, 96, 82]
     
     print_top_performers(names, updated_grades)
 
 
 if __name__ == "__main__":
     main()
+   
+   
+   
+   
+   
+   
+   
